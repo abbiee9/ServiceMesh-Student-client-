@@ -1,0 +1,5 @@
+com\student\controller\impl\StudentController.class
+com\student\config\SchoolFeignClient.class
+com\student\service\StudentServiceImpl.class
+com\student\StudentApp.class
+com\student\service\StudentService.class

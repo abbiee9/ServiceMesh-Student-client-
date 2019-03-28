@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: application-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "abu.southindia.cloudapp.azure.com"
+    tls: 
+      httpsRedirect: true
+  - port: 
+      number: 443
+      name: http2
+      protocol: HTTPS
+    tls: 
+      mode: SIMPLE
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+    hosts:
+    - "abu.southindia.cloudapp.azure.com"
